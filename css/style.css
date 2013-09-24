@@ -1,0 +1,146 @@
+/* 
+    Document   : style
+    Created on : Sep 12, 2013, 3:46:47 AM
+    Author     : Suraj
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#bitcoin-widget{
+    position: relative;
+    width:180px;
+    border: 1px solid #ccc;
+	-webkit-box-shadow: 2px 2px 4px #888881;
+	box-shadow: 2px 2px 4px #888881;
+}
+
+a{
+	text-decoration:underline;
+}
+
+#bitcoin-widget .tab-div{
+	background: rgb(241, 217, 154);
+}
+#bitcoin-widget a.middle-tab{
+	border-right: 1px solid #F0E7E7;
+	border-left: 1px solid #F0E7E7;
+}
+
+#bitcoin-widget a.tab{
+	text-decoration: none;
+	width: 32.9%;
+	display: block;
+	font-size: 10px;
+	float: left;
+	height: 23px;
+	text-align: center;
+	padding-top: 5px;
+}
+.bitcoin-login-status{
+	background:#eaeaea;
+	text-align:center;
+	color:#000000;
+	margin-top: 10px;
+}
+#bitcoin-widget #chart{
+    height : 90px;
+    text-align: center;
+    border:0px solid #ccc;
+    width:100%;
+	
+}
+
+#bitcoin-widget h2{
+    font-size: 25px;
+	margin-top: 10px;
+	text-align: center;
+	margin-bottom: 7px;
+	font-family: arial;
+	font-weight: bold;
+	color: #696969;
+}
+
+#bitcoin-widget ul{
+    margin-top : 10px;
+   border-bottom: 1px solid #E5E5E5;
+}
+
+#bitcoin-widget .line{
+	border-bottom: 1px #F0E7E7 solid;
+}
+#bitcoin-widget hr{
+	margin:0px;
+}
+#bitcoin-widget ul li{
+  list-style-type: none;
+	text-align: center;
+	background: #F6F6F6;
+	border-top: 1px solid #E5E5E5;
+	font-size: 12px;
+	color: #000;
+	padding: 3px;
+}
+.bitcon-footer{
+	background: #E1C161;
+	font-size: 10px;
+	font-style: italic;
+	line-height: 13px;
+	padding: 4px 4px;
+}
+#bitcoin-widget #link-row{
+	font-size: 10px;
+	position: relative;
+	bottom: 5px;
+	left: 5px;
+	margin-top: 20px;
+	text-align: center;
+	margin-bottom: 8px;
+	font-style: italic;
+	text-align: center;
+}
+.bitcoin-logo{
+background:#e1c161;
+padding: 3px 0px;
+}
+.bitcoin-logo img{
+	margin:auto;
+	display:block;
+}
+
+#bitcoin-widget #powered-by,#bitcoin-widget #get-the-plugin{
+    font-size: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+	color: #000;
+}
+
+#bitcoin-widget  div.flot-x-axis{
+	display:none;
+}
+
+#bitcoin-widget .loader{
+    padding-top : 104px;
+    top:60px;
+    position: absolute;
+    z-index: 1000;
+    width:100%;
+    height : 160px;
+    background: #fff;
+    opacity : 0.6;
+    text-align: center;
+}
+
+.clear{
+    clear:both;
+}
+.widget a {
+font-weight: normal !important;
+text-decoration: none;
+color: #000 !important;
+}
