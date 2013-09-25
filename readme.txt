@@ -37,6 +37,16 @@ You basically don’t have to do anything to use the Widget. Each time you load 
 
 If you have any questions please email me at ofir@nhm.co.il
 
+Question: Can I remove the "get the plugin" hyperlink at the bottom of the widget ?
+Answer: Yes you can. Although I'd prefer you wouldn't. But if you still want to here's what you need to do:
+
+1. Unzip the bitcoin-ticker-widget.zip file
+2. open the bicoin_widget.php file with any text editor (I use TextMate)
+3. Delete this line: <div id="get-the-plugin"><a style="text-decoration: underline;" href="#" target="_BLANK">Get the plugin</a></div>  (it should be line 244).
+4. Zip all the files back together.
+5. Refer to "Installation" to reinstall the plugin.
+
+
 == Screenshots ==
 
 1. Bitcoin Ticker Widget
