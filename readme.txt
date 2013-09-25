@@ -1,6 +1,6 @@
 === Bitcoin Ticker Widget ===
 Contributors: ofirbeigel
-Tags: bitcoin ticker, bit coin widget, bit coin price
+Tags: bitcoin ticker, bit coin widget, bit coin price, bitcoin, bitcoin widget, bitcoin wordpress,
 Requires at least: 2.9
 Tested up to: 3.6.1
 Stable tag: 1.0
@@ -39,7 +39,7 @@ If you have any questions please email me at ofir@nhm.co.il
 
 == Screenshots ==
 
-1. Bitcoin Ticker
+1. Bitcoin Ticker Widget
 
 == Changelog ==
 
