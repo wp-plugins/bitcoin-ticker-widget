@@ -4,7 +4,7 @@
     Plugin URI: 
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
-    Version: 1.0
+    Version: 1.1
     Author URI: ofir@nhm.co.il
 */
 
@@ -67,7 +67,7 @@ function fetch_chart_data(){
 	}
 	
 	$arr = array();
-    if ($stream = fopen($url, 'r')) {
+        if ($stream = fopen($url, 'r')) {
 		
 		$prev = 0;
 		$k =0 ;
@@ -229,20 +229,22 @@ class Bitcoin_Widget extends WP_Widget {
                         <a class="tab" href="#bitstamp" data-name="bitstamp">BitStamp</a>
                         <div class="clear line"></div>
                     </div>
-                    <div id="last-price"></div>
-                    <div id="chart"></div>
-					<div class="bitcoin-login-status">Last 24 hours</div>
-                    <div id="bitcoin-data">
-                        
-                    </div>
-                    <div class="clear"></div>
-                    <div id="link-row"></div>
-					<div class="clear"></div>
+					<div id="fixedheight">
+						<div id="last-price"></div>
+						<div id="chart"></div>
+						<div class="bitcoin-login-status">Last 24 hours</div>
+						<div id="bitcoin-data">
+							
+						</div>
+						<div class="clear"></div>
+						<div id="link-row"></div>
+						<div class="clear"></div>
+					</div>	
 					<hr />
 					<div class="bitcon-footer">
-					<div id="powered-by">Powered by <span></span></div>
-                    <div id="get-the-plugin"><a style="text-decoration: underline;" href="#" target="_BLANK">Get the plugin</a></div>
-                    <div class="loader">Loading...</div>
+						<div id="powered-by">Powered by <span></span></div>
+						<div id="get-the-plugin"><a style="text-decoration: underline;" href="#" target="_BLANK">Get the plugin</a></div>
+						<div class="loader">Loading...</div>
 					</div>
                 </div>
                 <?php
@@ -283,3 +285,15 @@ function register_bitcoin_widget(){
     register_widget( 'Bitcoin_Widget' );
 }
 add_action( 'widgets_init', 'register_bitcoin_widget');
+
+
+function bitcoin_activate() {
+
+    // Activation code here...
+    if(!function_exists('curl_version')){
+        deactivate_plugins(__FILE__);
+        wp_die('This plugin requires PHP CURL module which is not enabled on your server. Please contact your server administrator');
+    }
+	
+}
+register_activation_hook( __FILE__, 'bitcoin_activate' );

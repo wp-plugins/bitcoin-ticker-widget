@@ -13,7 +13,7 @@
 
 #bitcoin-widget{
     position: relative;
-    width:180px;
+    width:160px;
     border: 1px solid #ccc;
 	-webkit-box-shadow: 2px 2px 4px #888881;
 	box-shadow: 2px 2px 4px #888881;
@@ -90,7 +90,10 @@ a{
 	font-size: 10px;
 	font-style: italic;
 	line-height: 13px;
+	position:absolute;
+	bottom:0px;
 	padding: 4px 4px;
+	width:96%;
 }
 #bitcoin-widget #link-row{
 	font-size: 10px;
@@ -143,4 +146,12 @@ padding: 3px 0px;
 font-weight: normal !important;
 text-decoration: none;
 color: #000 !important;
+}
+
+#fixedheight p.center{
+	text-align:center;
+	padding-top:30px;
+}
+#fixedheight{
+	height:390px;
 }

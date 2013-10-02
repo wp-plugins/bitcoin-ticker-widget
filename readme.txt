@@ -3,7 +3,7 @@ Contributors: ofirbeigel
 Tags: bitcoin ticker, bit coin widget, bit coin price, bitcoin, bitcoin widget, bitcoin wordpress,
 Requires at least: 2.9
 Tested up to: 3.6.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 This will allow you to display a simple Bitcoin ticker widget that displays Bitcoin prices form 3 major Bitcoin exchanges.
 
@@ -38,6 +38,10 @@ You basically don’t have to do anything to use the Widget. Each time you load 
 
 If you have any questions please email me at ofir@nhm.co.il
 
+Question: I am getting an error message "This plugin requires PHP CURL module which is not enabled on your server. Please contact your server administrator"
+
+Answer: This means that you do not have PHP cURL enabled on your hosting plan. You will need to contact whoever is hosting your website and request that it be enabled. There is no way to fetch data from the different exchanges without PHP cURL enabled.
+
 Question: Can I remove the "get the plugin" hyperlink at the bottom of the widget ?
 
 Answer: Yes you can. Although I'd prefer you wouldn't. But if you still want to here's what you need to do:
@@ -58,3 +62,6 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 
 = 1.0 =
 * Plugin released.
+
+=1.1  =
+* Updated to disable plugin when PHP cURL isn't enabled.
