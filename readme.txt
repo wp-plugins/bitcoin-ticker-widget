@@ -63,5 +63,5 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 = 1.0 =
 * Plugin released.
 
-=1.1  =
+= 1.1  =
 * Updated to disable plugin when PHP cURL isn't enabled.
