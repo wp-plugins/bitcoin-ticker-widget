@@ -4,7 +4,7 @@
     Plugin URI: 
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
-    Version: 1.1
+    Version: 1.2
     Author URI: ofir@nhm.co.il
 */
 
@@ -166,8 +166,8 @@ function fetch_plugin_data()
 	$data = explode(',',$data);
 	
 	echo json_encode(array( 'powered_by' => $data[0],
-							'powered_by_url' => $data[1],
-							'get_plugin_url' => $data[2]));
+                                //'powered_by_url' => $data[1],
+                                'get_plugin_url' => $data[1]));
 	die;
 }
 add_action('wp_ajax_fetch_plugin_data', 'fetch_plugin_data');
@@ -242,10 +242,10 @@ class Bitcoin_Widget extends WP_Widget {
 					</div>	
 					<hr />
 					<div class="bitcon-footer">
-						<div id="powered-by">Powered by <span></span></div>
-						<div id="get-the-plugin"><a style="text-decoration: underline;" href="#" target="_BLANK">Get the plugin</a></div>
-						<div class="loader">Loading...</div>
-					</div>
+                                            <!--<div id="powered-by">Powered by <span></span></div>-->
+                                            <div id="get-the-plugin"><a style="text-decoration: underline;" href="#" target="_BLANK"></a></div>
+                                            <div class="loader">Loading...</div>
+                                        </div>
                 </div>
                 <?php
 		echo $args['after_widget'];
