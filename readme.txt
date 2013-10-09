@@ -3,7 +3,7 @@ Contributors: ofirbeigel
 Tags: bitcoin ticker, bit coin widget, bit coin price, bitcoin, bitcoin widget, bitcoin wordpress,
 Requires at least: 2.9
 Tested up to: 3.6.1
-Stable tag: 1.1
+Stable tag: 1.2
 
 This will allow you to display a simple Bitcoin ticker widget that displays Bitcoin prices form 3 major Bitcoin exchanges.
 
@@ -64,4 +64,9 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 * Plugin released.
 
 = 1.1  =
+* Reduced widget size.
 * Updated to disable plugin when PHP cURL isn't enabled.
+
+= 1.2  =
+* Reduced footer size.
+* Bug fix on loading of data.
