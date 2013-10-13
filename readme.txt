@@ -17,6 +17,7 @@ The Bitcoin Ticker WordPress Plugin allows you to add a widget to your WordPress
 * DIsplays a graph of the Bitcoin prices in the last 24 hours.
 * Displays bid, ask, low, high and volume values of selected exchange.
 
+Brought to you by http://BitcoinWithPaypal.com
 
 == Installation ==
 
