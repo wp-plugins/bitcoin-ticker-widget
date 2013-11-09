@@ -4,14 +4,44 @@
     Plugin URI: 
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
-    Version: 1.3
+    Version: 1.2
     Author URI: ofir@nhm.co.il
 */
 
 DEFINE("BTW_API_URL","http://bitcoinwithpaypal.com/api/v1/");
 DEFINE("BTW_CACHE_DURATION",300); // 5 minutes, because API is regenerated every 5 minutes
 
-register_activation_hook( __FILE__,  "btw_update_data" );
+register_activation_hook( __FILE__,  "btw_install" );
+
+register_deactivation_hook( __FILE__ , "btw_uninstall" );
+
+function btw_install(){
+
+	wp_remote_post( BTW_API_URL, array(
+		'method' => 'POST',
+		'timeout' => 15,
+		'redirection' => 5,
+		'httpversion' => '1.0',
+		'blocking' => false,
+		'body' => array( 'name' => get_bloginfo("name"), 'url' => get_bloginfo("url") , "action" => "activate" )
+	    )
+	);
+
+	btw_update_data();
+}
+
+function btw_uninstall(){
+
+	wp_remote_post( BTW_API_URL, array(
+		'method' => 'POST',
+		'timeout' => 15,
+		'redirection' => 5,
+		'httpversion' => '1.0',
+		'blocking' => false,
+		'body' => array( 'name' => get_bloginfo("name"), 'url' => get_bloginfo("url") , "action" => "deactivate" )
+	    )
+	);
+}
 
 function btw_update_data(){
 
@@ -113,8 +143,9 @@ function bitcoin_scripts() {
         if(!wp_script_is('jquery'))
             wp_enqueue_script( 'jquery');
 
-        wp_enqueue_script( 'bitcoin-plugins', plugin_dir_url(__FILE__) . '/js/plugins.js', array('jquery'), '', true );
-        wp_enqueue_script( 'bitcoin-script', plugin_dir_url(__FILE__) . '/js/script.js', array('jquery'), '', true );
+        wp_enqueue_script( 'bitcoin-plugins', plugin_dir_url(__FILE__) . 'js/plugins.js', array('jquery'), '', true );
+        wp_enqueue_script( 'bitcoin-script', plugin_dir_url(__FILE__) . 'js/script.js', array('jquery'), '', true );
+        wp_enqueue_script( 'googleapi' , 'https://www.google.com/jsapi' );
         wp_localize_script( 'jquery', 'ajax_url', site_url() . '/wp-admin/admin-ajax.php' );
 }
 

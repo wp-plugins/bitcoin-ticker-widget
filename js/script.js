@@ -1,8 +1,33 @@
 (function($){
 
+    var google_visualization_loaded = false;
+
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(function(){
+
+        google_visualization_loaded = true;
+
+        $.each( widgetsWaitingForLoad , function( i , widget ){
+
+            $( widget.element ).bitcoinWidget( widget.data );
+
+        });
+
+    });
+
     var listOfWidgets = new Array();
+    var widgetsWaitingForLoad = new Array();
 
     $.fn.bitcoinWidget = function( data ){
+
+        if( !google_visualization_loaded ){
+
+            return this.each(function(){
+
+                widgetsWaitingForLoad.push({ "element" : this, "data" : data });
+
+            });
+        }
 
         return this.each(function(){
 
@@ -55,7 +80,33 @@
                         $tab.find(".bitcoin-chart").addClass("bitcoin-chart-disabled").html( "<span>Data currently not available</span>" );
                     }
                     else {
-                        $.plot( $tab.find(".bitcoin-chart").removeClass("bitcoin-chart-disabled") ,[ tabData["chart"][ time ] ] );
+                        
+                        var chartData = new Array();
+
+                        chartData.push(['','']);
+
+                        $.each( tabData["chart"][ time ] , function( index , time_data ){
+
+                            chartData.push( [ null, time_data[ 1 ] ] );
+
+                        } );
+
+                        var googleChartData = google.visualization.arrayToDataTable(chartData);
+
+                        var options = {
+                            hAxis : {
+                                textPosition : "none"
+                            },
+                            legend : {
+                                position : "none"
+                            }
+                        };
+
+                        var chart = new google.visualization.LineChart( $tab.find(".bitcoin-chart").get( 0 ) );
+
+                        chart.draw(googleChartData, options);
+
+                        //$.plot( $tab.find(".bitcoin-chart").removeClass("bitcoin-chart-disabled") ,[ tabData["chart"][ time ] ] );
                     }
 
                 });
@@ -102,7 +153,7 @@
                         </ul>'
                     );
 
-                    $tab.find('.bitcoin-last-updated').data("livestamp",data.updated).attr("data-livestamp",data.updated);
+                    $tab.find('.bitcoin-timeago').data("livestamp",data.updated).attr("data-livestamp",data.updated);
                         
                     $tab.find(".bitcoin-chart").empty();
 
@@ -112,7 +163,34 @@
                         $tab.find(".bitcoin-chart").html( "Data currently not available" );
                     }
                     else {
-                        $.plot( $tab.find(".bitcoin-chart") , [ tabData["chart"][ $tab.data("time") ] ]);
+
+                        var chartData = new Array();
+
+                        chartData.push(['','']);
+
+                        $.each( tabData["chart"][ $tab.data("time") ] , function( index , time_data ){
+
+                            chartData.push( [ null, time_data[ 1 ] ] );
+
+                        } );
+
+                        var googleChartData = google.visualization.arrayToDataTable(chartData);
+
+                        var options = {
+                            hAxis : {
+                                textPosition : "none"
+                            },
+                            legend : {
+                                position : "none"
+                            }
+                        };
+
+                        var chart = new google.visualization.LineChart( $tab.find(".bitcoin-chart").get( 0 ) );
+
+                        chart.draw(googleChartData, options);
+
+
+                       // $.plot( $tab.find(".bitcoin-chart") , [ tabData["chart"][ $tab.data("time") ] ]);
                     }
 
                 });
