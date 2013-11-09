@@ -3,21 +3,23 @@ Contributors: ofirbeigel
 Tags: bitcoin ticker, bit coin widget, bit coin price, bitcoin, bitcoin widget, bitcoin wordpress,
 Requires at least: 2.9
 Tested up to: 3.6.1
-Stable tag: 1.2
+Stable tag: 1.3
 
 This will allow you to display a simple Bitcoin ticker widget that displays Bitcoin prices form 3 major Bitcoin exchanges.
 
 == Description ==
-
+The New and improved ticker!!! Now faster and more accurate than before.
 
 The Bitcoin Ticker WordPress Plugin allows you to add a widget to your WordPress blog that shows you a ticker of the latest Bitcoin prices from different exchanges.
 
 * Gives you the option to view 3 different Bitcoin exchanges – MtGox, BTCe and BitStamp.
 * Shows you the latest Bitcoin prices on the selected exchange.
-* DIsplays a graph of the Bitcoin prices in the last 24 hours.
+* DIsplays a graph of the Bitcoin prices in the last 24 hours / 7 days / 30 days.
 * Displays bid, ask, low, high and volume values of selected exchange.
 
 Visit my original plugin page at http://bitcoinwithpaypal.com/bitcoin-ticker-widget-plugin/
+
+If you have any questions or ideas for improvements please email me at ofir@nhm.co.il
 
 == Installation ==
 
@@ -38,6 +40,11 @@ You basically don’t have to do anything to use the Widget. Each time you load 
 == Frequently Asked Questions ==
 
 If you have any questions please email me at ofir@nhm.co.il
+
+Question: I am not getting any date for last 30 days
+Answer: It takes some time for the DataBase to fill itself. Since this version is new this should not occur after December 10th 2013.
+
+Answer: This means that you do not have PHP cURL enabled on your hosting plan. You will need to contact whoever is hosting your website and request that it be enabled. There is no way to fetch data from the different exchanges without PHP cURL enabled.
 
 Question: I am getting an error message "This plugin requires PHP CURL module which is not enabled on your server. Please contact your server administrator"
 
@@ -71,3 +78,8 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 = 1.2  =
 * Reduced footer size.
 * Bug fix on loading of data.
+
+= 1.3 = 
+* Adjust size to column
+* Use cache for faster UI
+* Allow more requests per user
