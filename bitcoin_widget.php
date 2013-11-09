@@ -4,7 +4,7 @@
     Plugin URI: 
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
-    Version: 1.2
+    Version: 1.3
     Author URI: ofir@nhm.co.il
 */
 
