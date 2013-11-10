@@ -4,7 +4,7 @@
     Plugin URI: 
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
-    Version: 1.3
+    Version: 1.3.1
     Author URI: ofir@nhm.co.il
 */
 
@@ -210,7 +210,7 @@ class Bitcoin_Widget extends WP_Widget {
 					<div class="bitcoin-widget-tabs">
 						<div class='bitcoin-tab' id='bitcoin-tab-mtgox' >
 							<div class='bitcoin-tab-content' >
-								<div class="bitcoin-last-price"><h2><?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["buy"],2);?></h2></div>
+								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["buy"],2);?></h2></div>
 								<div class="bitcoin-chart"></div>
 								<div class="bitcoin-login-status">Show last: <a href='javascript:void(0)' data-time='daily' class='active' >24h</a> / <a href='javascript:void(0)' data-time='weekly' >7d</a> / <a href='javascript:void(0)' data-time='monthly' >30d</a></div>
 								<div class="bitcoin-data">
@@ -223,13 +223,13 @@ class Bitcoin_Widget extends WP_Widget {
 		                            </ul>
 								</div>
 								<div class="bitcoin-link-row">
-									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" data-livestamp="<?php echo $btw_options["last_updated"]; ?>" ></span></span>
+									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" ></span></span>
 								</div>
 							</div>
 						</div>
 						<div class='bitcoin-tab' id='bitcoin-tab-btce' >
 							<div class='bitcoin-tab-content' >
-								<div class="bitcoin-last-price"><h2><?php echo number_format($btw_options["data"]["btce"]["ticker"]["buy"] , 2);?></h2></div>
+								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["btce"]["ticker"]["buy"] , 2);?></h2></div>
 								<div class="bitcoin-chart"></div>
 								<div class="bitcoin-login-status">Show last: <a href='javascript:void(0)' data-time='daily' class='active' >24h</a> / <a href='javascript:void(0)' data-time='weekly' >7d</a> / <a href='javascript:void(0)' data-time='monthly' >30d</a></div>
 								<div class="bitcoin-data">
@@ -242,13 +242,13 @@ class Bitcoin_Widget extends WP_Widget {
 		                            </ul>
 		                         </div>
 								<div class="bitcoin-link-row">
-									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" data-livestamp="<?php echo $btw_options["last_updated"]; ?>" ></span></span>
+									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" ></span></span>
 								</div>
 							</div>
 						</div>
 						<div class='bitcoin-tab' id='bitcoin-tab-bitstamp' >
 							<div class='bitcoin-tab-content' >
-								<div class="bitcoin-last-price"><h2><?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["buy"] , 2);?></h2></div>
+								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["buy"] , 2);?></h2></div>
 								<div class="bitcoin-chart"></div>
 								<div class="bitcoin-login-status">Show last: <a href='javascript:void(0)' data-time='daily' class='active' >24h</a> / <a href='javascript:void(0)' data-time='weekly' >7d</a> / <a href='javascript:void(0)' data-time='monthly' >30d</a></div>
 								<div class="bitcoin-data">
@@ -261,7 +261,7 @@ class Bitcoin_Widget extends WP_Widget {
 		                            </ul>
 								</div>
 								<div class="bitcoin-link-row">
-									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" data-livestamp="<?php echo $btw_options["last_updated"]; ?>" ></span></span>
+									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" ></span></span>
 								</div>
 							</div>
 						</div>

@@ -18,6 +18,10 @@
     var listOfWidgets = new Array();
     var widgetsWaitingForLoad = new Array();
 
+    var widgetID = 0;
+
+    
+
     $.fn.bitcoinWidget = function( data ){
 
         if( !google_visualization_loaded ){
@@ -33,14 +37,15 @@
 
             var $widget = $(this),
                 $tab_links = $widget.find("a.bitcoin-tab-link"),
-                $tabs = $widget.find(".bitcoin-tab");
+                $tabs = $widget.find(".bitcoin-tab"),
+                ID = widgetID++;
 
             listOfWidgets.push( $widget );
 
             if( listOfWidgets.length == 1 ){
                 setInterval(function(){
 
-                    $.get( btw_ajax_url , { action : "btw_data" }, function( response ){
+                    $.get( btw_ajax_url , { action : "btw_data" , random : new Date().getTime() }, function( response ){
 
                         $.each( listOfWidgets , function( i , widget ){
 
@@ -106,7 +111,12 @@
 
                         chart.draw(googleChartData, options);
 
-                        //$.plot( $tab.find(".bitcoin-chart").removeClass("bitcoin-chart-disabled") ,[ tabData["chart"][ time ] ] );
+                        $(window).unbind("resize.bitcoin"+ID).bind("resize.bitcoin"+ID,function(){
+
+                            chart.draw(googleChartData, options);
+
+                        });
+
                     }
 
                 });
@@ -153,7 +163,7 @@
                         </ul>'
                     );
 
-                    $tab.find('.bitcoin-timeago').data("livestamp",data.updated).attr("data-livestamp",data.updated);
+                    $tab.find('.bitcoin-timeago').livestamp('destroy').livestamp( data.updated );
                         
                     $tab.find(".bitcoin-chart").empty();
 
@@ -189,14 +199,19 @@
 
                         chart.draw(googleChartData, options);
 
+                        $(window).unbind("resize.bitcoin"+ID).bind("resize.bitcoin"+ID,function(){
 
-                       // $.plot( $tab.find(".bitcoin-chart") , [ tabData["chart"][ $tab.data("time") ] ]);
+                            chart.draw(googleChartData, options);
+                            
+                        });
+
                     }
 
                 });
 
-                $('div.flot-x-axis').remove(); 
             });
+
+            $tabs.find('.bitcoin-timeago').livestamp( data.updated );
 
         });
     }

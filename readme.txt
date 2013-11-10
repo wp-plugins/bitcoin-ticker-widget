@@ -83,3 +83,7 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 * Adjust size to column
 * Use cache for faster UI
 * Allow more requests per user
+
+= 1.3.1 =
+* Fixed graph to show BUY price
+* Fixed "last updated" label
