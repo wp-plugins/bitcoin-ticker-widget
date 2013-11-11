@@ -4,7 +4,7 @@ Donate link: http://bitcoinwithpaypal.com/bitcoin-ticker-widget-plugin/
 Tags: bitcoin, bitcoin ticker, bitcoin widget, bitcoin price, bitcoin wordpress,
 Requires at least: 2.9
 Tested up to: 3.7.1
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2
 
 This will allow you to display a simple Bitcoin ticker widget that displays Bitcoin prices form 3 major Bitcoin exchanges.
@@ -90,6 +90,9 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 * Fixed graph to show BUY price
 * Fixed "last updated" label
 
+= 1.3.2 =
+* Added missing JS files
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -105,4 +108,7 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 * This update in required. It will fetch correct data and speed plugin load time.
 
 = 1.3.1 =
+* This update in required. It fixes critical bugs in older version.
+
+= 1.3.2 =
 * This update in required. It fixes critical bugs in older version.
