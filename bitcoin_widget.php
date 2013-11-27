@@ -1,7 +1,7 @@
 <?php
 /*
     Plugin Name: Bitcoin Ticker Widget
-    Plugin URI: 
+    Plugin URI: http://bitcoinwithpaypal.com/bitcoin-ticker-widget-plugin/
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
     Version: 1.3.2
