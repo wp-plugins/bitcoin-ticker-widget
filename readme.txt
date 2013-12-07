@@ -7,14 +7,14 @@ Tested up to: 3.7.1
 Stable tag: 1.3.2
 License: GPLv2
 
-This will allow you to display a simple Bitcoin ticker widget that displays Bitcoin prices form 3 major Bitcoin exchanges.
+This will allow you to display a simple Bitcoin ticker widget that displays Bitcoin prices form 4 major Bitcoin exchanges.
 
 == Description ==
-The New and improved ticker!!! Now faster and more accurate than before.
+The new and improved ticker!!! Now faster, more accurate than before and displaying BTC China as well.
 
 The Bitcoin Ticker WordPress Plugin allows you to add a widget to your WordPress blog that shows you a ticker of the latest Bitcoin prices from different exchanges.
 
-* Gives you the option to view 3 different Bitcoin exchanges – MtGox, BTCe and BitStamp.
+* Gives you the option to view 3 different Bitcoin exchanges – MtGox, BTCe, BTC-China and BitStamp.
 * Shows you the latest Bitcoin prices on the selected exchange.
 * DIsplays a graph of the Bitcoin prices in the last 24 hours / 7 days / 30 days.
 * Displays bid, ask, low, high and volume values of selected exchange.
@@ -43,10 +43,8 @@ You basically don’t have to do anything to use the Widget. Each time you load 
 
 If you have any questions please email me at ofir@nhm.co.il
 
-Question: I am not getting any date for last 30 days
-Answer: It takes some time for the DataBase to fill itself. Since this version is new this should not occur after December 10th 2013.
-
-Answer: This means that you do not have PHP cURL enabled on your hosting plan. You will need to contact whoever is hosting your website and request that it be enabled. There is no way to fetch data from the different exchanges without PHP cURL enabled.
+Question: I am not getting complete date for BTC China.
+Answer: It takes some time for the DataBase to fill itself. Since this version is new this should not occur after January 10th 2014.
 
 Question: I am getting an error message "This plugin requires PHP CURL module which is not enabled on your server. Please contact your server administrator"
 
@@ -93,6 +91,11 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 = 1.3.2 =
 * Added missing JS files
 
+= 1.4 =
+* Added BTC China to the exchanges.
+* Fixed width of ticker problem
+* minor graphic changes
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -112,3 +115,6 @@ div id="get-the-plugin">a style="text-decoration: underline;" href="#" target="_
 
 = 1.3.2 =
 * This update in required. It fixes critical bugs in older version.
+
+= 1.3.2 =
+* This update in optional. It will add BTC China to your list of exchanges.

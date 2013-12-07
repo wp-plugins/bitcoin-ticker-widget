@@ -9,6 +9,7 @@
 */
 
 DEFINE("BTW_API_URL","http://bitcoinwithpaypal.com/api/v1/");
+//DEFINE("BTW_API_URL","http://localhost.com/api/v1/");
 DEFINE("BTW_CACHE_DURATION",300); // 5 minutes, because API is regenerated every 5 minutes
 
 register_activation_hook( __FILE__,  "btw_install" );
@@ -110,6 +111,7 @@ function btw_get_options( $update = true){
 
 	if( $update && ( !$btw_options || $btw_options["last_updated"] < time() - BTW_CACHE_DURATION ) ):
 		btw_update_data();
+		$btw_options = get_option( "btw_options" );
 	endif;
 
 	return $btw_options;
@@ -203,65 +205,88 @@ class Bitcoin_Widget extends WP_Widget {
 					<div class="bitcoin-logo"></div>
                     <div class="bitcoin-tab-nav">
                         <a class="bitcoin-tab-link bitcoin-first-tab-link" href="javascript:void(0)" data-name="mtgox">Mt.GOX</a>
-                        <a class="bitcoin-tab-link bitcoin-middle-tab-link" href="javascript:void(0)" data-name="btce">BTC-E</a>
-                        <a class="bitcoin-tab-link bitcoin-last-tab-link" href="javascript:void(0)" data-name="bitstamp">BitStamp</a>
+                        <a class="bitcoin-tab-link bitcoin-last-tab-link" href="javascript:void(0)" data-name="btce">BTC-E</a>
+                        <div class="clear line"></div>
+                    </div>
+					<div class="bitcoin-tab-nav">
+                        <a class="bitcoin-tab-link bitcoin-first-tab-link" href="javascript:void(0)" data-name="bitstamp">BitStamp</a>
+						<a class="bitcoin-tab-link bitcoin-last-tab-link" href="javascript:void(0)" data-name="btc-china">BTC China</a>
                         <div class="clear line"></div>
                     </div>
 					<div class="bitcoin-widget-tabs">
-						<div class='bitcoin-tab' id='bitcoin-tab-mtgox' >
+						<div class='bitcoin-tab show-tab-onload active' id='bitcoin-tab-mtgox' >
 							<div class='bitcoin-tab-content' >
-								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["buy"],2);?></h2></div>
+								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["buy"]);?></h2></div>
 								<div class="bitcoin-chart"></div>
 								<div class="bitcoin-login-status">Show last: <a href='javascript:void(0)' data-time='daily' class='active' >24h</a> / <a href='javascript:void(0)' data-time='weekly' >7d</a> / <a href='javascript:void(0)' data-time='monthly' >30d</a></div>
 								<div class="bitcoin-data">
 									<ul>
-		                                <li>Buy : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["buy"],2); ?></li>
-		                                <li>Sell : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["sell"],2); ?></li>
-		                                <li>High : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["high"],2); ?></li>
-		                                <li>Low : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["low"],2); ?></li>
-		                                <li>Volume : <?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["volume"],2); ?></li>
+		                                <li>Buy : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["buy"]); ?></li>
+		                                <li>Sell : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["sell"]); ?></li>
+		                                <li>High : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["high"]); ?></li>
+		                                <li>Low : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["low"]); ?></li>
+		                                <li>Volume : $<?php echo number_format($btw_options["data"]["mtgox"]["ticker"]["volume"]); ?></li>
 		                            </ul>
 								</div>
 								<div class="bitcoin-link-row">
-									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" ></span></span>
+									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" >5 minutes ago</span></span>
 								</div>
 							</div>
 						</div>
 						<div class='bitcoin-tab' id='bitcoin-tab-btce' >
 							<div class='bitcoin-tab-content' >
-								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["btce"]["ticker"]["buy"] , 2);?></h2></div>
+								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["btce"]["ticker"]["buy"]);?></h2></div>
 								<div class="bitcoin-chart"></div>
 								<div class="bitcoin-login-status">Show last: <a href='javascript:void(0)' data-time='daily' class='active' >24h</a> / <a href='javascript:void(0)' data-time='weekly' >7d</a> / <a href='javascript:void(0)' data-time='monthly' >30d</a></div>
 								<div class="bitcoin-data">
 									<ul>
-		                                <li>Buy : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["buy"] , 2); ?></li>
-		                                <li>Sell : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["sell"] , 2); ?></li>
-		                                <li>High : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["high"] , 2); ?></li>
-		                                <li>Low : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["low"] , 2); ?></li>
-		                                <li>Volume : <?php echo number_format($btw_options["data"]["btce"]["ticker"]["volume"] , 2); ?></li>
+		                                <li>Buy : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["buy"]); ?></li>
+		                                <li>Sell : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["sell"]); ?></li>
+		                                <li>High : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["high"]); ?></li>
+		                                <li>Low : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["low"]); ?></li>
+		                                <li>Volume : $<?php echo number_format($btw_options["data"]["btce"]["ticker"]["volume"]); ?></li>
 		                            </ul>
 		                         </div>
 								<div class="bitcoin-link-row">
-									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" ></span></span>
+									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" >5 minutes ago</span></span>
 								</div>
 							</div>
 						</div>
 						<div class='bitcoin-tab' id='bitcoin-tab-bitstamp' >
 							<div class='bitcoin-tab-content' >
-								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["buy"] , 2);?></h2></div>
+								<div class="bitcoin-last-price"><h2>$<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["buy"]);?></h2></div>
 								<div class="bitcoin-chart"></div>
 								<div class="bitcoin-login-status">Show last: <a href='javascript:void(0)' data-time='daily' class='active' >24h</a> / <a href='javascript:void(0)' data-time='weekly' >7d</a> / <a href='javascript:void(0)' data-time='monthly' >30d</a></div>
 								<div class="bitcoin-data">
 									<ul>
-		                                <li>Buy : $<?php echo number_format( $btw_options["data"]["bitstamp"]["ticker"]["buy"] , 2); ?></li>
-		                                <li>Sell : $<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["sell"] , 2); ?></li>
-		                                <li>High : $<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["high"] , 2); ?></li>
-		                                <li>Low : $<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["low"] , 2); ?></li>
-		                                <li>Volume : <?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["volume"] , 2); ?></li>
+		                                <li>Buy : $<?php echo number_format( $btw_options["data"]["bitstamp"]["ticker"]["buy"]); ?></li>
+		                                <li>Sell : $<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["sell"]); ?></li>
+		                                <li>High : $<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["high"]); ?></li>
+		                                <li>Low : $<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["low"]); ?></li>
+		                                <li>Volume : $<?php echo number_format($btw_options["data"]["bitstamp"]["ticker"]["volume"]); ?></li>
 		                            </ul>
 								</div>
 								<div class="bitcoin-link-row">
-									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" ></span></span>
+									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" >5 minutes ago</span></span>
+								</div>
+							</div>
+						</div>
+						<div class='bitcoin-tab' id='bitcoin-tab-btc-china' >
+							<div class='bitcoin-tab-content' >
+								<div class="bitcoin-last-price"><h2>&yen; <?php echo number_format($btw_options["data"]["btc-china"]["ticker"]["buy"]);?></h2></div>
+								<div class="bitcoin-chart"></div>
+								<div class="bitcoin-login-status">Show last: <a href='javascript:void(0)' data-time='daily' class='active' >24h</a> / <a href='javascript:void(0)' data-time='weekly' >7d</a> / <a href='javascript:void(0)' data-time='monthly' >30d</a></div>
+								<div class="bitcoin-data">
+									<ul>
+		                                <li>Buy : &yen; <?php echo number_format( $btw_options["data"]["btc-china"]["ticker"]["buy"]); ?></li>
+		                                <li>Sell : &yen; <?php echo number_format($btw_options["data"]["btc-china"]["ticker"]["sell"]); ?></li>
+		                                <li>High : &yen; <?php echo number_format($btw_options["data"]["btc-china"]["ticker"]["high"]); ?></li>
+		                                <li>Low : &yen; <?php echo number_format($btw_options["data"]["btc-china"]["ticker"]["low"]); ?></li>
+		                                <li>Volume : &yen; <?php echo number_format($btw_options["data"]["btc-china"]["ticker"]["volume"]); ?></li>
+		                            </ul>
+								</div>
+								<div class="bitcoin-link-row">
+									<span class="bitcoin-last-updated">Last updated: <span class="bitcoin-timeago" >5 minutes ago</span></span>
 								</div>
 							</div>
 						</div>

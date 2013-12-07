@@ -150,20 +150,25 @@
                     var $tab = $(this),
                         tabName = $tab.attr("id").replace("bitcoin-tab-",""),
                         tabData = data[tabName];
-
-                    $tab.find(".bitcoin-last-price").html(' <h2>$'+(number_format(tabData.ticker.buy,2))+'</h2>');
+						
+						var currency_symbol = '$';
+						if (tabName == 'btc-china') {
+							var currency_symbol = '&yen; ';
+						}
+						
+                    $tab.find(".bitcoin-last-price").html(' <h2>'+currency_symbol+(number_format(tabData.ticker.buy))+'</h2>');
 
                     $tab.find(".bitcoin-data").html(
                         '<ul>\
-                            <li>Buy : $'+ (number_format(tabData.ticker.buy,2))+'</li>\
-                            <li>Sell : $'+(number_format(tabData.ticker.sell,2))+'</li>\
-                            <li>High : $'+(number_format(tabData.ticker.high,2))+'</li>\
-                            <li>Low : $'+(number_format(tabData.ticker.low,2))+'</li>\
-                            <li>Volume : '+(number_format(tabData.ticker.volume,2))+'</li>\
+                            <li>Buy : '+currency_symbol+ (number_format(tabData.ticker.buy))+'</li>\
+                            <li>Sell : '+currency_symbol+(number_format(tabData.ticker.sell))+'</li>\
+                            <li>High : '+currency_symbol+(number_format(tabData.ticker.high))+'</li>\
+                            <li>Low : '+currency_symbol+(number_format(tabData.ticker.low))+'</li>\
+                            <li>Volume : '+currency_symbol+(number_format(tabData.ticker.volume))+'</li>\
                         </ul>'
                     );
 
-                    $tab.find('.bitcoin-timeago').livestamp('destroy').livestamp( data.updated );
+                    //$tab.find('.bitcoin-timeago').livestamp('destroy').livestamp( data.updated );
                         
                     $tab.find(".bitcoin-chart").empty();
 
@@ -210,8 +215,8 @@
                 });
 
             });
-
-            $tabs.find('.bitcoin-timeago').livestamp( data.updated );
+			
+            //$tabs.find('.bitcoin-timeago').livestamp( data.updated );
 
         });
     }
