@@ -293,7 +293,7 @@ class Bitcoin_Widget extends WP_Widget {
 					</div>	
 					<hr />
 					<div class="bitcoin-footer">
-                        <div class="bitcoin-get-the-plugin"><a style="text-decoration: underline;" href="http://bitcoinwithpaypal.com/bitcoin-ticker-widget-plugin/" target="_BLANK">Get the Bitcoin Ticker</a></div>
+                        <div class="bitcoin-get-the-plugin"><a style="text-decoration: underline;" href="http://bitcoinwithpaypal.com/bitcoin-ticker-widget-plugin/" rel="nofollow" target="_BLANK">Get the Bitcoin Ticker</a></div>
                     </div>
                     <!--<div class="bitcoin-loader"></div>-->
                 </div>
