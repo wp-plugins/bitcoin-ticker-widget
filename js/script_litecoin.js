@@ -9,7 +9,7 @@
 
         $.each( widgetsWaitingForLoad , function( i , widget ){
 
-            $( widget.element ).bitcoinWidget( widget.data );
+            $( widget.element ).litecoinWidget( widget.data );
 
         });
 
@@ -22,7 +22,7 @@
 
     
 
-    $.fn.bitcoinWidget = function( data ){
+    $.fn.litecoinWidget = function( data ){
 
         if( !google_visualization_loaded ){
 
@@ -36,8 +36,8 @@
         return this.each(function(){
 
             var $widget = $(this),
-                $tab_links = $widget.find("a.bitcoin-tab-link"),
-                $tabs = $widget.find(".bitcoin-tab"),
+                $tab_links = $widget.find("a.litecoin-tab-link"),
+                $tabs = $widget.find(".litecoin-tab"),
                 ID = widgetID++;
 
             listOfWidgets.push( $widget );
@@ -45,11 +45,11 @@
             if( listOfWidgets.length == 1 ){
                 setInterval(function(){
 
-                    $.get( btw_ajax_url , { action : "btw_data" , random : new Date().getTime() }, function( response ){
+                    $.get( lcw_ajax_url , { action : "lcw_data" , random : new Date().getTime() }, function( response ){
 
                         $.each( listOfWidgets , function( i , widget ){
 
-                            $(widget).trigger("btw.update",[ response ]);
+                            $(widget).trigger("lcw.update",[ response ]);
 
                         });
 
@@ -62,12 +62,13 @@
 
                 var $tab_link = $(this),
                     $tab = $tabs.eq(index),
-                    tabName = $tab.attr("id").replace("bitcoin-tab-",""),
+                    tabName = $tab.attr("id").replace("litecoin-tab-",""),
                     tabData = data[tabName],
-                    $time_links =  $tab.find(".bitcoin-login-status a"),
+                    $time_links =  $tab.find(".litecoin-login-status a"),
                     time = null;
 
                $time_links.bind("click",function(e){
+
                     e.preventDefault();
 
                     $time_links.removeClass("active");
@@ -78,10 +79,10 @@
 
                     $tab.data("time",time);
 
-                    $tab.find(".bitcoin-chart").empty();
+                    $tab.find(".litecoin-chart").empty();
 
                     if( !tabData["chart"] || !tabData["chart"][ time ] || tabData["chart"][ time ].length == 0 ){
-                        $tab.find(".bitcoin-chart").addClass("bitcoin-chart-disabled").html( "<span>Data currently not available</span>" );
+                        $tab.find(".litecoin-chart").addClass("litecoin-chart-disabled").html( "<span>Data currently not available</span>" );
                     }
                     else {
                         
@@ -106,11 +107,11 @@
                             }
                         };
 
-                        var chart = new google.visualization.LineChart( $tab.find(".bitcoin-chart").get( 0 ) );
+                        var chart = new google.visualization.LineChart( $tab.find(".litecoin-chart").get( 0 ) );
 
                         chart.draw(googleChartData, options);
 
-                        $(window).unbind("resize.bitcoin"+ID).bind("resize.bitcoin"+ID,function(){
+                        $(window).unbind("resize.litecoin"+ID).bind("resize.litecoin"+ID,function(){
 
                             chart.draw(googleChartData, options);
 
@@ -136,24 +137,20 @@
 					$(parent_dropdown).addClass('expanded');
 
                     $time_links.filter(".active").trigger("click");
-					
-					
 
                 });
 
                 $tab.data("time","daily");
 
             }).first().trigger("click");
-			
 
-            $widget.bind("btw.update",function( e, new_data ){
-
-                data = new_data['btc'];
+            $widget.bind("lcw.update",function( e, new_data ){
+                data = new_data['lcw'];
 
                 $tabs.each(function(){
 
                     var $tab = $(this),
-                        tabName = $tab.attr("id").replace("bitcoin-tab-",""),
+                        tabName = $tab.attr("id").replace("litecoin-tab-",""),
                         tabData = data[tabName];
 						
 						var currency_symbol = '$';
@@ -190,18 +187,21 @@
 						inner_content += '<li>Low  <span class="item_val">'+low_val+'</span></li>';
 						}
 						if (display_volume == '1') {
-						inner_content += '<li>Volume  <span class="item_val">'+ (number_format(tabData.ticker.volume))+' BTC</span></li>';
+						inner_content += '<li>Volume  <span class="item_val">'+ (number_format(tabData.ticker.volume))+'  LTC</span></li>';
 						}
 						inner_content += '</ul>';
-						
-                    $tab.find(".bitcoin-data").html(inner_content);
 
-                    $tab.find(".bitcoin-chart").empty();
+                    $tab.find(".litecoin-data").html(inner_content);
 
-                    $tab.removeClass("bitcoin-tab-loading");
+                    $tab.find('.litecoin-timeago').livestamp('destroy').livestamp( data.updated );
+                        
+                    $tab.find(".litecoin-chart").empty();
 
-                    if( tabData["chart"][ $tab.data("time") ].length == 0 ){
-                        $tab.find(".bitcoin-chart").html( "Data currently not available" );
+                    $tab.removeClass("litecoin-tab-loading");
+
+                 //   if( tabData["chart"][ $tab.data("time") ].length == 0 ){
+				    if( tabData["chart"][ $tab.data("time") ].length == 0 ){
+                        $tab.find(".litecoin-chart").html( "Data currently not available" );
                     }
                     else {
 
@@ -226,11 +226,11 @@
                             }
                         };
 
-                        var chart = new google.visualization.LineChart( $tab.find(".bitcoin-chart").get( 0 ) );
+                        var chart = new google.visualization.LineChart( $tab.find(".litecoin-chart").get( 0 ) );
 
                         chart.draw(googleChartData, options);
 
-                        $(window).unbind("resize.bitcoin"+ID).bind("resize.bitcoin"+ID,function(){
+                        $(window).unbind("resize.litecoin"+ID).bind("resize.litecoin"+ID,function(){
 
                             chart.draw(googleChartData, options);
                             
@@ -241,7 +241,8 @@
                 });
 
             });
-			
+
+            $tabs.find('.litecoin-timeago').livestamp( data.updated );
 
         });
     }
