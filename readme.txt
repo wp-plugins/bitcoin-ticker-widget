@@ -87,7 +87,7 @@ Answer: Yes you can. Although I'd prefer you wouldn't.
 * Fixed width of ticker problem
 * minor graphic changes
 
-=2.0=
+= 2.0 =
 * New design
 * Added Litecoin
 * Added Bitcoin Average
