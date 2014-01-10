@@ -338,9 +338,11 @@ class Bitcoin_Widget extends WP_Widget {
 						if (isset($links_btc_tabs[$selected_bitcoin_ex])) {
 							echo $links_btc_tabs[$selected_bitcoin_ex];
 						}
-						foreach ($links_btc_tabs as $key => $val) {
-							if ($key != $selected_bitcoin_ex) {
-								echo $val;
+						if (is_array($links_btc_tabs)) {
+							foreach ($links_btc_tabs as $key => $val) {
+								if ($key != $selected_bitcoin_ex) {
+									echo $val;
+								}
 							}
 						}
 						?>
@@ -637,9 +639,11 @@ class Bitcoin_Widget extends WP_Widget {
 						if (isset($content_btc_tabs[$selected_bitcoin_ex])) {
 							echo $content_btc_tabs[$selected_bitcoin_ex];
 						}
-						foreach ($content_btc_tabs as $key => $val) {
-							if ($key != $selected_bitcoin_ex) {
-								echo $val;
+						if (is_array($content_btc_tabs)) {
+							foreach ($content_btc_tabs as $key => $val) {
+								if ($key != $selected_bitcoin_ex) {
+									echo $val;
+								}
 							}
 						}
 			
