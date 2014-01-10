@@ -116,4 +116,4 @@ Answer: Yes you can. Although I'd prefer you wouldn't.
 * This update in optional. It will add BTC China to your list of exchanges.
 
 = 2.0 =
-Get the new Coin Ticker. This update is mandatory in order to continue using the plugin.
+* Get the new Coin Ticker. This update is mandatory in order to continue using the plugin.
