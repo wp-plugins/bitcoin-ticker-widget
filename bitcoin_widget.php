@@ -1,7 +1,7 @@
 <?php
 /*
     Plugin Name: Bitcoin Ticker Widget
-    Plugin URI: http://99bitcoins.com/bitcoin-ticker-widget-plugin/
+    Plugin URI: http://99bitcoins.com.com/bitcoin-ticker-widget-plugin/
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
     Version: 2.0
@@ -9,6 +9,7 @@
 */
 
 DEFINE("BTW_API_URL","http://coinsapi.com/api/v1");
+DEFINE("BTW_API_URL_REGISTER","http://coinsapi.com/api/v1/index.php");
 DEFINE("BTW_CACHE_DURATION",300); // 5 minutes, because API is regenerated every 5 minutes
 
 register_activation_hook( __FILE__,  "btw_install" );
@@ -17,7 +18,7 @@ register_deactivation_hook( __FILE__ , "btw_uninstall" );
 
 function btw_install(){
 
-	wp_remote_post( BTW_API_URL, array(
+	wp_remote_post( BTW_API_URL_REGISTER, array(
 		'method' => 'POST',
 		'timeout' => 15,
 		'redirection' => 5,
@@ -32,7 +33,7 @@ function btw_install(){
 
 function btw_uninstall(){
 
-	wp_remote_post( BTW_API_URL, array(
+	wp_remote_post( BTW_API_URL_REGISTER, array(
 		'method' => 'POST',
 		'timeout' => 15,
 		'redirection' => 5,
