@@ -4,7 +4,7 @@ Donate link: http://bitcoinwithpaypal.com/bitcoin-ticker-widget-plugin/
 Tags: bitcoin, bitcoin ticker, bitcoin widget, bitcoin price, bitcoin wordpress, litecoin widget, litecoin ticker, litecoin price
 Requires at least: 2.9
 Tested up to: 3.8
-Stable tag: 2.0
+Stable tag: 2.0.1
 License: GPLv2
 
 Display a fully customisable Bitcoin/Litecoin ticker widget that features prices form 5 major exchanges.
@@ -92,6 +92,9 @@ Answer: Yes you can. Although I'd prefer you wouldn't.
 * Added Litecoin
 * Added Bitcoin Average
 
+= 2.0.1 =
+* Fixed crash issue
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -116,4 +119,7 @@ Answer: Yes you can. Although I'd prefer you wouldn't.
 * This update in optional. It will add BTC China to your list of exchanges.
 
 = 2.0 =
+* Get the new Coin Ticker. This update is mandatory in order to continue using the plugin.
+
+= 2.1 =
 * Get the new Coin Ticker. This update is mandatory in order to continue using the plugin.

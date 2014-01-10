@@ -4,7 +4,7 @@
     Plugin URI: http://99bitcoins.com.com/bitcoin-ticker-widget-plugin/
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
-    Version: 2.0
+    Version: 2.0.1
     Author URI: ofir@99bitcoins.com
 */
 
