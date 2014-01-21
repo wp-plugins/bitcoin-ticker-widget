@@ -7,7 +7,7 @@ Tested up to: 3.8
 Stable tag: 2.0.1
 License: GPLv2
 
-Display a fully customisable Bitcoin/Litecoin ticker widget that features prices form 5 major exchanges.
+Display a fully customisable Bitcoin/Litecoin ticker widget that features prices from 5 major exchanges.
 
 == Description ==
 The new and improved ticker!!! Faster, more accurate and displays information from 5 different exchanges, Bitcoin and Litecoin. Add this amazing widget to your Wordpress site today.
