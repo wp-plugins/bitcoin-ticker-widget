@@ -10,6 +10,7 @@ License: GPLv2
 Display a fully customisable Bitcoin/Litecoin ticker widget that features prices from 5 major exchanges.
 
 == Description ==
+
 The new and improved ticker!!! Faster, more accurate and displays information from 5 different exchanges, Bitcoin and Litecoin. Add this amazing widget to your Wordpress site today.
 
 * View 5 different Bitcoin exchanges – MtGox, BTCe, BTC-China, BitStamp and Bitcoin Average.
@@ -46,6 +47,10 @@ Answer: It takes some time for the DataBase to fill itself. Since this version i
 Question: I am getting an error message "This plugin requires PHP CURL module which is not enabled on your server. Please contact your server administrator"
 
 Answer: This means that you do not have PHP cURL enabled on your hosting plan. You will need to contact whoever is hosting your website and request that it be enabled. There is no way to fetch data from the different exchanges without PHP cURL enabled.
+
+Question: The plugin isn’t displaying correctly, what can I do ?
+
+Answer: Try to remove it from your widgets and then re-insert it. If that doesn’t work clear you cache and make sure to disable any caching plugin you may be using such as W3 Total Cache or Super Cache.
 
 Question: Can I remove the "get the plugin" hyperlink at the bottom of the widget ?
 
