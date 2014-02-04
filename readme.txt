@@ -10,7 +10,7 @@ License: GPLv2
 Display a fully customisable Bitcoin/Litecoin ticker widget that features prices from 5 major exchanges.
 
 == Description ==
-<object width="560" height="315"><param name="movie" value="//www.youtube.com/v/_falv24VCcw?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/_falv24VCcw?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<div class='video'><object width="560" height="315"><param name="movie" value="//www.youtube.com/v/_falv24VCcw?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/_falv24VCcw?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object></div>
 The new and improved ticker!!! Faster, more accurate and displays information from 5 different exchanges, Bitcoin and Litecoin. Add this amazing widget to your Wordpress site today.
 
 * View 5 different Bitcoin exchanges – MtGox, BTCe, BTC-China, BitStamp and Bitcoin Average.
