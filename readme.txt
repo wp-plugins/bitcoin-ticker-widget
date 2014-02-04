@@ -11,9 +11,11 @@ Display a fully customisable Bitcoin/Litecoin ticker widget that features prices
 
 == Description ==
 
-<div class='video'><object width='532' height='325'><param name='movie' value='http://www.youtube.com/v/rkmrQP8S5KY?fs=1'></param><param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='never'></param><embed src='http://www.youtube.com/v/rkmrQP8S5KY?fs=1' type='application/x-shockwave-flash' allowscriptaccess='never' allowfullscreen='true' width='532' height='325'></embed></object></div>
+The all new and improved ticker!!! Faster, more accurate and displays information from 5 different exchanges, Bitcoin and Litecoin. Add this amazing widget to your Wordpress site today.
 
-The new and improved ticker!!! Faster, more accurate and displays information from 5 different exchanges, Bitcoin and Litecoin. Add this amazing widget to your Wordpress site today.
+<p>
+<div class='video'><object width='532' height='325'><param name='movie' value='http://www.youtube.com/v/rkmrQP8S5KY?fs=1'></param><param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='never'></param><embed src='http://www.youtube.com/v/rkmrQP8S5KY?fs=1' type='application/x-shockwave-flash' allowscriptaccess='never' allowfullscreen='true' width='532' height='325'></embed></object></div>
+</p>
 
 * View 5 different Bitcoin exchanges – MtGox, BTCe, BTC-China, BitStamp and Bitcoin Average.
 * Choose between Bitcoin and Litecoin prices.
