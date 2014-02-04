@@ -11,7 +11,7 @@ Display a fully customisable Bitcoin/Litecoin ticker widget that features prices
 
 == Description ==
 
-[http://www.youtube.com/watch?v=_falv24VCcw]
+[youtube http://www.youtube.com/watch?v=_falv24VCcw]
 
 The new and improved ticker!!! Faster, more accurate and displays information from 5 different exchanges, Bitcoin and Litecoin. Add this amazing widget to your Wordpress site today.
 
