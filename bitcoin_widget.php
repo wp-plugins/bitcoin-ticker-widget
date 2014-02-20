@@ -4,7 +4,7 @@
     Plugin URI: http://99bitcoins.com.com/bitcoin-ticker-widget-plugin/
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
-    Version: 2.0.1
+    Version: 2.0.2
     Author URI: ofir@99bitcoins.com
 */
 
@@ -147,18 +147,14 @@ function btw_output_json( $data ){
  */
 function bitcoin_scripts() {
 	wp_enqueue_style( 'bitcoin-style',  plugin_dir_url(__FILE__) . 'css/style.css' );
-
-        if(!wp_script_is('jquery'))
-            wp_enqueue_script( 'bitcoin-jquery', plugin_dir_url(__FILE__) . 'js/jquery.js', array('jquery'), '', false );
-		
-		wp_enqueue_script( 'googleapi' , 'https://www.google.com/jsapi' );
-		wp_enqueue_script( 'bitcoin-jquery', plugin_dir_url(__FILE__) . 'js/jquery.js', array('jquery'), '', false );
-        wp_enqueue_script( 'bitcoin-plugins', plugin_dir_url(__FILE__) . 'js/plugins.js', array('jquery'), '', false );
-        wp_enqueue_script( 'bitcoin-script', plugin_dir_url(__FILE__) . 'js/script.js', array('jquery'), '', false );
-		wp_enqueue_script( 'litecoin-script', plugin_dir_url(__FILE__) . 'js/script_litecoin.js', array('jquery'), '', false );
-        wp_enqueue_script( 'bitcoin-drop-down', plugin_dir_url(__FILE__) . 'js/drop_down_script.js', array('jquery'), '', false );
         
-        wp_localize_script( 'jquery', 'ajax_url', site_url() . '/wp-admin/admin-ajax.php' );
+	wp_enqueue_script( 'googleapi' , 'https://www.google.com/jsapi' );
+	wp_enqueue_script( 'bitcoin-plugins', plugin_dir_url(__FILE__) . 'js/plugins.js', array('jquery'), '', false );
+	wp_enqueue_script( 'bitcoin-script', plugin_dir_url(__FILE__) . 'js/script.js', array('jquery'), '', false );
+	wp_enqueue_script( 'litecoin-script', plugin_dir_url(__FILE__) . 'js/script_litecoin.js', array('jquery'), '', false );
+	wp_enqueue_script( 'bitcoin-drop-down', plugin_dir_url(__FILE__) . 'js/drop_down_script.js', array('jquery'), '', false );
+	
+	wp_localize_script( 'jquery', 'ajax_url', site_url() . '/wp-admin/admin-ajax.php' );
 }
 
 function bitcoin_admin_scripts() {
