@@ -4,7 +4,7 @@
     Plugin URI: http://99bitcoins.com/bitcoin-ticker-widget-plugin/
     Description: Displays a ticker widget on your site of latest Bitcoin prices
     Author: Ofir Beigel
-    Version: 2.0.2
+    Version: 2.0.3
     Author URI: ofir@99bitcoins.com
 */
 
@@ -223,7 +223,7 @@ class Bitcoin_Widget extends WP_Widget {
 			$instance['bitcoin_btce'] = '1';
 			$instance['bitcoin_bitstamp'] = '1';
 			$instance['litecoin_btce'] = '1';
-			$instance['bitcoin_btn_ex'] = 'mtgox';
+			$instance['bitcoin_btn_ex'] = 'btce';
 			$instance['buy'] = '1';
 			$instance['sell'] = '1';
 			$instance['high'] = '1';
@@ -239,7 +239,7 @@ class Bitcoin_Widget extends WP_Widget {
 			$bitcoin = true;
 		}
 		
-		$mtgox = (esc_attr($instance['bitcoin_mtgox']) == '1') ? true : false;
+		//$mtgox = (esc_attr($instance['bitcoin_mtgox']) == '1') ? true : false;
 		$btcchina = (esc_attr($instance['bitcoin_btcchina']) == '1') ? true : false;
 		$btcavg = (esc_attr($instance['bitcoin_btcavg']) == '1') ? true : false;
 		$btce = (esc_attr($instance['bitcoin_btce']) == '1') ? true : false;
@@ -250,9 +250,9 @@ class Bitcoin_Widget extends WP_Widget {
 		
 				
 		switch ($bitcoin_btn_ex) {
-			case 'mtgox':
+			/*case 'mtgox':
 				$selected_bitcoin_ex = 'Mt. Gox';
-				break;
+				break;*/
 			case 'btce':
 				$selected_bitcoin_ex = 'BTC-E';
 				break;
@@ -266,7 +266,7 @@ class Bitcoin_Widget extends WP_Widget {
 				$selected_bitcoin_ex = 'BTC Avg';
 				break;
 			default:
-				$selected_bitcoin_ex = 'Mt Gox';
+				$selected_bitcoin_ex = 'BTC-E';
 				break;
 		}
 		
@@ -315,9 +315,9 @@ class Bitcoin_Widget extends WP_Widget {
 				<div class="dropdown">
 					<div class="bitcoin-tab-nav">
 						<?php 
-						if ($mtgox) {
+						/*if ($mtgox) {
 							$links_btc_tabs['Mt. Gox'] = '<a class="bitcoin-tab-link bitcoin-first-tab-link drop_options" href="javascript:void(0)" data-name="mtgox">Mt. Gox</a>';
-						}
+						}*/
 						if ($btce) {
 							$links_btc_tabs['BTC-E'] = '<a class="bitcoin-tab-link bitcoin-last-tab-link drop_options" href="javascript:void(0)" data-name="btce">BTC-E</a>';
 						} 
@@ -349,6 +349,7 @@ class Bitcoin_Widget extends WP_Widget {
 			
 			<div class="bitcoin-widget-tabs">
 			<?php 
+			/*
 			if ($mtgox) {
 				$content_btc_tabs['Mt. Gox'] = '<div class="bitcoin-tab" id="bitcoin-tab-mtgox">
 					<div class="bitcoin-tab-content" >
@@ -406,6 +407,7 @@ class Bitcoin_Widget extends WP_Widget {
 								</div>
 							</div>';
 			}
+			*/
 			if ($btce) {
 				$content_btc_tabs['BTC-E'] = '<div class="bitcoin-tab" id="bitcoin-tab-btce">
 					<div class="bitcoin-tab-content" >
@@ -756,7 +758,7 @@ class Bitcoin_Widget extends WP_Widget {
 			$bitcoin = esc_attr($instance['bitcoin']);
 			$litecoin = esc_attr($instance['litecoin']);
 			
-			$bitcoin_mtgox = esc_attr($instance['bitcoin_mtgox']);
+			//$bitcoin_mtgox = esc_attr($instance['bitcoin_mtgox']);
 			$bitcoin_btcchina = esc_attr($instance['bitcoin_btcchina']);
 			$bitcoin_btce = esc_attr($instance['bitcoin_btce']);
 			$bitcoin_bitstamp = esc_attr($instance['bitcoin_bitstamp']);
@@ -784,7 +786,7 @@ class Bitcoin_Widget extends WP_Widget {
 			$bitcoin = '1';
 			$litecoin = '1';
 			
-			$bitcoin_mtgox = '1';
+			//$bitcoin_mtgox = '1';
 			$bitcoin_btcchina = '1';
 			$bitcoin_btce = '1';
 			$bitcoin_bitstamp = '1';
@@ -800,7 +802,7 @@ class Bitcoin_Widget extends WP_Widget {
 			
 			$btn_coins ='bitcoin';
 			
-			$bitcoin_btn_ex ='mtgox';
+			$bitcoin_btn_ex ='btce';
 			
 			$litecoin_btn_ex ='btce';
 		}
@@ -878,13 +880,13 @@ class Bitcoin_Widget extends WP_Widget {
 					<td>Show</td>
 					<td>Default</td>
 				</tr>
-				<tr>
+				<!--<tr>
 					<td>Mt Gox</td>
 					
-					<td><input type="checkbox" id="<?php echo $this->get_field_id('bitcoin_mtgox'); ?>" name="<?php echo $this->get_field_name('bitcoin_mtgox'); ?>" <?php if($bitcoin_mtgox!='' && $bitcoin_mtgox=='1') echo "checked" ;?> value="1" /></td>
+					<td><input type="checkbox" id="<?php //echo $this->get_field_id('bitcoin_mtgox'); ?>" name="<?php //echo $this->get_field_name('bitcoin_mtgox'); ?>" <?php //if($bitcoin_mtgox!='' && $bitcoin_mtgox=='1') echo "checked" ;?> value="1" /></td>
 					
-					<td><input type="radio" name="<?php echo $this->get_field_name('bitcoin_btn_ex');?>" value="<?php echo esc_attr( 'mtgox'); ?>"  <?php if($bitcoin_btn_ex!='' && $bitcoin_btn_ex=='mtgox') echo "checked" ;?> /></td>
-				</tr>
+					<td><input type="radio" name="<?php //echo $this->get_field_name('bitcoin_btn_ex');?>" value="<?php //echo esc_attr( 'mtgox'); ?>"  <?php //if($bitcoin_btn_ex!='' && $bitcoin_btn_ex=='mtgox') echo "checked" ;?> /></td>
+				</tr>-->
 				<tr>
 					<td>BTC-E</td>
 					
@@ -1025,7 +1027,7 @@ class Bitcoin_Widget extends WP_Widget {
 		$instance['litecoin'] =( ! empty( $new_instance['litecoin'] ) ) ? strip_tags( $new_instance['litecoin'] ) : '';
 		
 		
-		$instance['bitcoin_mtgox'] = ( ! empty( $new_instance['bitcoin_mtgox'] ) ) ? strip_tags( $new_instance['bitcoin_mtgox'] ) : '';
+		//$instance['bitcoin_mtgox'] = ( ! empty( $new_instance['bitcoin_mtgox'] ) ) ? strip_tags( $new_instance['bitcoin_mtgox'] ) : '';
 		$instance['bitcoin_btcchina'] = ( ! empty( $new_instance['bitcoin_btcchina'] ) ) ? strip_tags( $new_instance['bitcoin_btcchina'] ) : '';
 		$instance['bitcoin_btcavg'] = ( ! empty( $new_instance['bitcoin_btcavg'] ) ) ? strip_tags( $new_instance['bitcoin_btcavg'] ) : '';
 		$instance['bitcoin_btce'] = ( ! empty( $new_instance['bitcoin_btce'] ) ) ? strip_tags( $new_instance['bitcoin_btce'] ) : '';
@@ -1059,7 +1061,7 @@ class Bitcoin_Widget extends WP_Widget {
 			$this->bitcoin_error->add('data_ticker', $error_msg['choose_one']);
 		}
 		
-		if( !( $instance['bitcoin_mtgox']=='1') && !($instance['bitcoin_btcchina']=='1') && !( $instance['bitcoin_btce']=='1') && !($instance['bitcoin_bitstamp']=='1') && !($instance['bitcoin_btcavg']=='1'))
+		if( !($instance['bitcoin_btcchina']=='1') && !( $instance['bitcoin_btce']=='1') && !($instance['bitcoin_bitstamp']=='1') && !($instance['bitcoin_btcavg']=='1'))
 		{
 			$this->bitcoin_error->add('exchange_ticker_bitcoin',$error_msg['choose_one']);
 		}
@@ -1082,10 +1084,10 @@ class Bitcoin_Widget extends WP_Widget {
 			$this->bitcoin_error->add('coins_default_ticker', $error_msg['choose_default']);
 		}
 		
-		if( !( $instance['bitcoin_mtgox']=='1') && ($instance['bitcoin_btn_ex']=='mtgox'))
+		/*if( !( $instance['bitcoin_mtgox']=='1') && ($instance['bitcoin_btn_ex']=='mtgox'))
 		{
 			$this->bitcoin_error->add('exchange_bitcoin_default', $error_msg['choose_default']);
-		}
+		}*/
 		
 		if( !( $instance['bitcoin_btcchina']=='1') && ($instance['bitcoin_btn_ex']=='btcchina'))
 		{
