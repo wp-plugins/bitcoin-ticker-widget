@@ -262,7 +262,7 @@ class Bitcoin_Widget extends WP_Widget {
 				$selected_bitcoin_ex = 'BitStamp';
 				break;
 			case 'hitbtc':
-				$selected_bitcoin_ex = 'Hit BTC';
+				$selected_bitcoin_ex = 'HitBTC';
 				break;
 			/*case 'btcchina':
 				$selected_bitcoin_ex = 'BTC China';
@@ -336,7 +336,7 @@ class Bitcoin_Widget extends WP_Widget {
 							$links_btc_tabs['BTC Avg'] = '<a class="bitcoin-tab-link bitcoin-last-tab-link drop_options" href="javascript:void(0)" data-name="btc-avg">BTC Avg</a>';
 						} 
 						if ($hitbtc) {
-							$links_btc_tabs['Hit BTC'] = '<a class="bitcoin-tab-link bitcoin-last-tab-link drop_options" href="javascript:void(0)" data-name="btc-hitbtc">Hit BTC</a>';
+							$links_btc_tabs['HitBTC'] = '<a class="bitcoin-tab-link bitcoin-last-tab-link drop_options" href="javascript:void(0)" data-name="btc-hitbtc">HitBTC</a>';
 						} 
 						
 						if (isset($links_btc_tabs[$selected_bitcoin_ex])) {
@@ -643,7 +643,7 @@ class Bitcoin_Widget extends WP_Widget {
 			}
 				
 			if ($hitbtc) {
-				$content_btc_tabs['Hit BTC'] = '<div class="bitcoin-tab" id="bitcoin-tab-btc-hitbtc">
+				$content_btc_tabs['HitBTC'] = '<div class="bitcoin-tab" id="bitcoin-tab-btc-hitbtc">
 					<div class="bitcoin-tab-content" >
 					
 						<div class="main_category">
@@ -679,21 +679,21 @@ class Bitcoin_Widget extends WP_Widget {
 							<div class="bitcoin-data">
 								<ul>';
 			if ($buy)
-			$content_btc_tabs['Hit BTC'] .= '<li>Buy  <span class="item_val">$'.number_format($btw_options["btc-hitbtc"]["ticker"]["buy"],2).'</span></li>';
+			$content_btc_tabs['HitBTC'] .= '<li>Buy  <span class="item_val">$'.number_format($btw_options["btc-hitbtc"]["ticker"]["buy"],2).'</span></li>';
 			
 			if ($sell)
-			$content_btc_tabs['Hit BTC'] .= '<li>Sell  <span class="item_val">$'.number_format($btw_options["btc-hitbtc"]["ticker"]["sell"],2).'</span></li>';
+			$content_btc_tabs['HitBTC'] .= '<li>Sell  <span class="item_val">$'.number_format($btw_options["btc-hitbtc"]["ticker"]["sell"],2).'</span></li>';
 			
 			if ($high)
-			$content_btc_tabs['Hit BTC'] .= '<li>High  <span class="item_val">$'.number_format($btw_options["btc-hitbtc"]["ticker"]["high"],2).'</span></li>';
+			$content_btc_tabs['HitBTC'] .= '<li>High  <span class="item_val">$'.number_format($btw_options["btc-hitbtc"]["ticker"]["high"],2).'</span></li>';
 			
 			if ($low)
-			$content_btc_tabs['Hit BTC'] .= '<li>Low  <span class="item_val">$'.number_format($btw_options["btc-hitbtc"]["ticker"]["low"],2).'</span></li>';
+			$content_btc_tabs['HitBTC'] .= '<li>Low  <span class="item_val">$'.number_format($btw_options["btc-hitbtc"]["ticker"]["low"],2).'</span></li>';
 			
 			if ($volume)
-			$content_btc_tabs['Hit BTC'] .= '<li>Volume  <span class="item_val">'.number_format($btw_options["btc-hitbtc"]["ticker"]["volume"],0).' BTC</span></li>';
+			$content_btc_tabs['HitBTC'] .= '<li>Volume  <span class="item_val">'.number_format($btw_options["btc-hitbtc"]["ticker"]["volume"],0).' BTC</span></li>';
 									
-			$content_btc_tabs['Hit BTC'] .= '</ul>
+			$content_btc_tabs['HitBTC'] .= '</ul>
 										</div>
 									</div>
 								</div>
@@ -977,7 +977,7 @@ class Bitcoin_Widget extends WP_Widget {
 					<td><input type="radio" name="<?php //echo $this->get_field_name('bitcoin_btn_ex');?>" value="<?php //echo esc_attr( 'btcchina'); ?>" <?php //if($bitcoin_btn_ex!='' && $bitcoin_btn_ex=='btcchina') echo "checked" ;?> /></td>
 				</tr>-->
 				<tr>
-					<td>Hit BTC</td>
+					<td>HitBTC</td>
 					
 					<td><input type="checkbox"  id="<?php echo $this->get_field_id('bitcoin_hitbtc'); ?>" name="<?php echo $this->get_field_name('bitcoin_hitbtc'); ?>" <?php if($bitcoin_hitbtc!='' && $bitcoin_hitbtc=='1') echo "checked" ;?> value="1"/></td>
 					
