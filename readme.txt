@@ -15,7 +15,7 @@ Display a fully customisable Bitcoin/Litecoin ticker widget that features prices
 
 The all new and improved ticker!!! Faster, more accurate and displays information from 5 different exchanges, Bitcoin and Litecoin. Add this amazing widget to your Wordpress site today.
 
-* View 4 different Bitcoin exchanges – BTCe, HITBTC, BitStamp and Bitcoin Average.
+* View 4 different Bitcoin exchanges – BTCe, HitBTC, BitStamp and Bitcoin Average.
 * Choose between Bitcoin and Litecoin prices.
 * Displays a graph of the prices in the last 24 hours / 7 days / 30 days.
 * Displays bid, ask, low, high and volume values of selected exchange.
@@ -108,7 +108,7 @@ Answer: Yes you can. Although I'd prefer you wouldn't.
 * Fixed CSS issues and removed MT.Gox
 
 = 2.0.4 =
-* Added HITBTC instead of BTC-China
+* Added HitBTC instead of BTC-China
 
 == Upgrade Notice ==
 
