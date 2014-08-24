@@ -1,13 +1,13 @@
-=== Coin Ticker: Bitcoin & Litecoin Ticker Widget ===
+=== Bitcoin Price Ticker: Bitcoin & Litecoin Price Widget ===
 Contributors: ofirbeigel
-Donate link: http://bitcoinwithpaypal.com/bitcoin-ticker-widget-plugin/
+Donate link: http://99bitcoins.com/bitcoin-ticker-widget-plugin/
 Tags: bitcoin, bitcoin ticker, bitcoin widget, bitcoin price, bitcoin wordpress, litecoin widget, litecoin ticker, litecoin price
 Requires at least: 2.9
 Tested up to: 3.9.2
 Stable tag: 2.0.4
 License: GPLv2
 
-Display a fully customisable Bitcoin/Litecoin ticker widget that features prices from 4 major exchanges.
+Display a fully customisable Bitcoin / Litecoin price ticker widget that features prices from 4 major exchanges.
 
 == Description ==
 
